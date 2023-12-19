@@ -12,3 +12,11 @@ cakes({apples: 3, flour: 300, sugar: 150, milk: 100, oil: 100}, {sugar: 500, flo
 """
 
 #Initial solution
+def cakes(recipe, available):
+    lst = []
+    print(set(recipe))
+    for key in set(recipe):
+        if key not in available:
+            return 0
+        lst.append(int(available[key]//recipe[key]))
+    return min(lst)
