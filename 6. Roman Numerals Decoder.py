@@ -21,3 +21,25 @@ C          100
 D          500
 M          1,000
 """
+
+
+#Initial solution
+def solution(roman : str) -> int:
+    dict = {
+        "I" : 1,
+        "V": 5,
+        "X" : 10,
+        "L" : 50,
+        "C": 100,
+        "D" : 500,
+        "M" : 1000 
+    }
+    ret = dict[roman[-1]]
+    for i in range(0, len(roman)-1):
+        if dict[roman[i]]>=dict[roman[i+1]]:
+            ret+=(dict[roman[i]])
+        else:
+            ret-=(dict[roman[i]])
+    return ret
+
+#Updated solution
