@@ -20,3 +20,7 @@ def cakes(recipe, available):
             return 0
         lst.append(int(available[key]//recipe[key]))
     return min(lst)
+
+#Updated solution (using list comprehension)\
+def cakes(recipe, available):
+    return min([0 if key not in available else (int(available[key]//recipe[key])) for key in set(recipe)])
