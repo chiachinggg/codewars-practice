@@ -8,7 +8,29 @@ Customers in the dictionary are represented as:
 { 'customerName' : [list_of_order_values_as_integers] }
 See example test case for more details.
 '''                     
+        
+#after modularization
 
+def pizza_rewards(customers, min_orders, min_price):
+    yahoo = set()
+    counter = 0
+    def price_check(order):
+        counter+=1
+        return order >= min_price
+        
+    def order_check(counter):
+        return counter >= min_orders
+        
+    for customer in customers:
+        for order in customers[customer]:
+            if price_check(order):
+        if order_check(counter):
+            yahoo.add(customer)
+    return yahoo
+    #customer.items()
+
+
+#initial solution
 def pizza_rewards(customers, min_orders, min_price):
     yahoo = set()
     for index, customer in enumerate(customers):
